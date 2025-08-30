@@ -17,12 +17,6 @@ const initialTodos = [
     details: "تفاصيل المهمة الجيديدة",
     isComplete: false,
   },
-  {
-    id: uuidv4(),
-    title: "اضافة مهمة جديدة",
-    details: "تفاصيل المهمة الجيديدة",
-    isComplete: false,
-  },
 ];
 function App() {
   const [todos, setTodos] = useState(initialTodos);
