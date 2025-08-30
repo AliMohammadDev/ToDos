@@ -31,11 +31,16 @@ export default function TodoList() {
   const { showHideToast } = useToast();
 
   const completedTodos = useMemo(() => {
+    console.log("completedTodos");
+
     return todos.filter((t) => {
       return t.isComplete;
     });
   }, [todos]);
+
   const notCompletedTodos = useMemo(() => {
+    console.log("notCompletedTodos");
+
     return todos.filter((t) => {
       return !t.isComplete;
     });
@@ -88,6 +93,7 @@ export default function TodoList() {
   }
 
   let todoToBeRerender = todos;
+
   if (displayTodosType == "non-completed") {
     todoToBeRerender = notCompletedTodos;
   } else if (displayTodosType == "completed") {
@@ -107,6 +113,7 @@ export default function TodoList() {
   function changeDisplayTypes(e) {
     setDisplayTodosType(e.target.value);
   }
+
   useEffect(() => {
     const saved = localStorage.getItem("todos");
     let storageTodos = [];
@@ -139,6 +146,7 @@ export default function TodoList() {
     setTitleInput("");
     showHideToast("تم اضافة المهمة بنجاح");
   }
+
   return (
     <>
       {/* DELETE MODAL */}
